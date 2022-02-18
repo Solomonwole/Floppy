@@ -101,7 +101,7 @@ border-color: #F6E36D;
 <p class="showcase__total">Total: <span style="color: #F6E36D;" id="total">0.07</span> <span style="color: #F6E36D;"> ETH</span></p>
 </div>
 <p>
-    <button
+    <button onclick="sendETH();"
       style="
       width:100%;
       height:46px;
@@ -120,7 +120,7 @@ border-color: #F6E36D;
         padding-right: 15px;
         margin-bottom: 0px;
       "
-      class="sendEthButton"
+      <!-- class="sendEthButton" -->
     >
       MINT
     </button>
@@ -248,8 +248,7 @@ border-color: #F6E36D;
 
     //Sending Ethereum to an address
     
-
-    sendEthButton.addEventListener('click', () => {
+    function sendETH(){
         if(typeof window !== 'undefined' &&
         typeof window.ethereum !== 'undefined'){
 
@@ -288,8 +287,53 @@ border-color: #F6E36D;
             openMetaMask();
             // alert('Please open site in MetaMask Browser');
         }
+    }
+
+
+    // sendEthButton.addEventListener('click', () => {
+    //     if(typeof window !== 'undefined' &&
+    //     typeof window.ethereum !== 'undefined'){
+
+    //     if(window.ethereum.chainId == "0x1"){
+    //         const total = document.getElementById('total').innerText;
+    //     if(ethereum.selectedAddress != null){
+            
+    //   const priceToWei = (total * 1e18).toString(16);
+    //   ethereum
+    //     .request({
+    //       method: 'eth_sendTransaction',
+    //       params: [
+    //         {
+    //           from: accounts[0],
+    //           to: ADDRESS,
+    //           value: priceToWei,
+    //           //  gasPrice: '21000',
+    //           //  gas: '21000',
+    //         },
+    //       ],
+    //     })
+    //     .then((txHash) => console.log(txHash))
+    //     .catch((error) => console.error);
+    //     }else{
+    //         connectAccount();
+    //     }
+    //     }else{
+    //         // alert('Switch to mainnet');
+    //          ethereum.request({
+    //                       method: 'wallet_switchEthereumChain',
+    //                       params: [{chainId: '0x1'}],
+    //                   });
+    //     }
+
+    //     }else{
+    //         openMetaMask();
+    //         // alert('Please open site in MetaMask Browser');
+    //     }
       
-    });
+    // });
+ 
+ 
+ 
   </script>
 
 
